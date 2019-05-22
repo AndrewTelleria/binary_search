@@ -99,6 +99,16 @@ class TestSearch(unittest.TestCase):
         result = binary_search(data, 1)
         self.assertEqual(result, "Data type needs to be a list")
 
+    def test_missing_input_item(self):
+        data = ["bad", "data", "input"]
+        with self.assertRaises(TypeError):
+            result = binary_search(data)
+
+    def test_missing_input_list(self):
+        data = 5
+        with self.assertRaises(TypeError):
+            result = binary_search(data)
+
 
 if __name__ == '__main__':
     unittest.main()
